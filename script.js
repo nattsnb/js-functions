@@ -101,10 +101,57 @@ console.warn("exercise 9");
 
 
 function isDivisible(n, x, y) {
-    const division1 = n%x
-    const division2 = n%y
-    const result = division1 + division2
-    return result === 0
+    const division1 = n%x;
+    const division2 = n%y;
+    const result = division1 + division2;
+    return result === 0;
 }
 
-console.log(isDivisible(50,4,10))
+console.log(isDivisible(50,4,10));
+
+
+console.warn("exercise 10");
+
+
+console.log(getBillboardPrice('Hello world!', 10)); // 120
+console.log(getBillboardPrice('Hello world!', 15)); // 180
+console.log(getBillboardPrice('To be, or not to be', 20)); // 380
+
+function getBillboardPrice (billboardText, price) {
+    return billboardText.length * price
+}
+
+
+console.warn("exercise 11");
+
+
+console.log(opposite(10));
+function opposite(number) {
+    return-number
+}
+
+
+console.warn("exercise 12");
+
+
+console.log(makeNegative(10));
+console.log(makeNegative(-5));
+
+function makeNegative(num) {
+    if (num > 0) {
+        return -num
+    }
+    return num
+}
+
+
+console.warn("exercise 13");
+
+
+console.log(removeChar("anaconda"));
+
+function removeChar(str){
+    str = str.slice(1)
+    str = str.slice(0, -1)
+    return str
+};
