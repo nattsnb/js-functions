@@ -329,7 +329,112 @@ function getPercentageValue(baseNumber, percentage) {
 console.warn("exercise 22");
 
 
+console.log(getGreaterNumber(100, 102));
 
-
+function getGreaterNumber(number1, number2) {
+    if (number1>number2){
+        return number1;
+    }
+    return number2;
+}
 
 console.warn("exercise 23");
+
+
+console.log(isOddNumber(13))
+function isOddNumber(number) {
+    const isDividedByTwo = number % 2;
+    return (isDividedByTwo !== 0);
+}
+
+
+console.warn("exercise 24");
+
+
+console.log(isEvenNumber(13))
+function isEvenNumber(number) {
+    return (number % 2 === 0);
+}
+
+
+console.warn("exercise 25");
+
+
+console.log(isDivisibleBy(14,7));
+
+function isDivisibleBy(dividend, divisor){
+    return (dividend % divisor === 0);
+}
+
+
+console.warn("exercise 26");
+
+
+console.log(getSmallerNumber(100, 102));
+
+function getSmallerNumber(number1, number2) {
+    if (number1<number2){
+        return number1;
+    }
+    return number2;
+}
+
+
+console.warn("exercise 27");
+
+
+console.log(isNumberPositive(-7));
+
+function isNumberPositive(number) {
+    return number > 0;
+}
+
+
+console.warn("exercise 28");
+
+
+console.log(getCelsiusConvertedToFahrenheit(78));
+
+function getCelsiusConvertedToFahrenheit(temperatureInC) {
+    return ((9/5) * temperatureInC) +32;
+}
+
+
+console.warn("exercise 29");
+
+
+console.log(getFahrenheitConvertedToCelsius(156));
+
+function getFahrenheitConvertedToCelsius(temperatureInF){
+    return (temperatureInF - 32) *( 5/9);
+}
+
+
+console.warn("exercise 30");
+
+
+console.log(isLeapYear(2024));
+
+function isLeapYear(year){
+    return (year % 4) === 0;
+}
+
+
+console.warn("exercise 31");
+
+
+console.log(getAverageOfThreeNumbers(3,7,5));
+
+function getAverageOfThreeNumbers(num1, num2, num3) {
+    return (num1+num2+num3)/3;
+}
+
+
+console.warn("exercise 32");
+
+
+console.log(isNumberNegative(-7));
+
+function isNumberNegative(number) {
+    return number < 0;
+}
