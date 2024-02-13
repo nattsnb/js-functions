@@ -1,5 +1,4 @@
 console.warn("exercise 1");
-console.log();
 
 
 const greeting = getGreeting('John', 'Smith');
@@ -45,6 +44,7 @@ function getCircleArea(providedRadius) {
 
 
 console.warn("exercise 5");
+
 
 const circlesAreaSum = getCirclesAreaSum(5, 10);
 console.log(circlesAreaSum); // 392.69908169872417
@@ -92,7 +92,7 @@ console.log(isTextUppercase('HELLO')); // true
 
 
 function isTextUppercase (isUppercaseString) {
-    uppercaseTest = isUppercaseString.toUpperCase();
+    const uppercaseTest = isUppercaseString.toUpperCase();
     return uppercaseTest === isUppercaseString;
 }
 
@@ -118,7 +118,7 @@ console.log(getBillboardPrice('Hello world!', 15)); // 180
 console.log(getBillboardPrice('To be, or not to be', 20)); // 380
 
 function getBillboardPrice (billboardText, price) {
-    return billboardText.length * price
+    return billboardText.length * price;
 }
 
 
@@ -127,7 +127,7 @@ console.warn("exercise 11");
 
 console.log(opposite(10));
 function opposite(number) {
-    return-number
+    return -number;
 }
 
 
@@ -139,9 +139,9 @@ console.log(makeNegative(-5));
 
 function makeNegative(num) {
     if (num > 0) {
-        return -num
+        return -num;
     }
-    return num
+    return num;
 }
 
 
@@ -151,7 +151,185 @@ console.warn("exercise 13");
 console.log(removeChar("anaconda"));
 
 function removeChar(str){
-    str = str.slice(1)
-    str = str.slice(0, -1)
-    return str
-};
+    let removedLettersString = str.slice(1);
+    removedLettersString = removedLettersString.slice(0, -1);
+    return removedLettersString
+}
+
+
+console.warn("exercise 14");
+
+
+console.log(basicOp("+", 14, 16));
+
+function basicOp(operation, value1, value2){
+    if (operation === "+") {
+        return value1 + value2;
+    }
+    if (operation === "-") {
+        return value1 - value2;
+    }
+    if (operation === "*") {
+        return value1 * value2;
+    }
+    if (operation === "/") {
+        return value1 / value2;
+    }
+    return "error";
+}
+
+
+console.warn("exercise 15");
+
+
+console.log(century(34789));
+
+function century(year) {
+    if (year<100){
+        return 1
+    }
+    if (year<1000) {
+        const yearString = year.toString();
+        const firstNumber = yearString.substr(0, 1);
+        const lastTwoNumbers = yearString.substr(-2);
+        if (lastTwoNumbers === "00"){
+            return Number(firstNumber);
+        }
+        return Number(firstNumber)+1;
+    }
+    const yearString = year.toString();
+    const firstNumbers = yearString.substr(0, yearString.length - 2);
+    const lastTwoNumbers = yearString.substr(-2);
+    if (lastTwoNumbers === "00"){
+        return Number(firstNumbers);
+    }
+    return Number(firstNumbers)+1;
+}
+
+
+console.warn("exercise 16");
+
+
+console.log(evenOrOdd(6786));
+
+function evenOrOdd(number) {
+    const isDividedByTwo = number % 2;
+    if (isDividedByTwo === 0){
+        return "Even";
+    }
+    return "Odd";
+}
+
+
+console.warn("exercise 17");
+
+
+console.log(areYouPlayingBanjo("Robert"));
+
+function areYouPlayingBanjo(name) {
+    let firstLetter = name.slice(0,1);
+    firstLetter = firstLetter.toLowerCase();
+    if (firstLetter === "r"){
+        return name + " plays banjo";
+    }
+    return name + " does not play banjo";
+}
+
+
+console.warn("exercise 18");
+
+
+console.log(bmi(65,1.65));
+
+function bmi(weight, height) {
+    const bmiNumber =  weight / (height*height);
+    if (bmiNumber <= 18.5){
+        return "Underweight";
+    }
+    if (bmiNumber <= 25){
+        return "Normal";
+    }
+    if (bmiNumber <= 30){
+        return "Overweight";
+    }
+    return "Obese";
+}
+
+
+console.warn("exercise 19");
+
+
+console.log(rockPaperScissors('rock', 'scissors')); // 1
+console.log(rockPaperScissors('rock', 'paper')); // 2
+console.log(rockPaperScissors('paper','paper')); // 0
+
+function rockPaperScissors(firstPlayerAnswer, secondPlayerAnswer) {
+    if (firstPlayerAnswer === "rock"){
+        if (secondPlayerAnswer === "scissors"){
+            return 1;
+        }
+        if (secondPlayerAnswer === "paper"){
+            return 2;
+        }
+        return 0;
+    }
+    if (firstPlayerAnswer === "scissors"){
+        if (secondPlayerAnswer === "paper"){
+            return 1;
+        }
+        if (secondPlayerAnswer === "rock"){
+            return 2;
+        }
+        return 0;
+    }
+    if (firstPlayerAnswer === "paper"){
+        if (secondPlayerAnswer === "rock"){
+            return 1;
+        }
+        if (secondPlayerAnswer === "scissors"){
+            return 2;
+        }
+        return 0;
+    }
+}
+
+
+console.warn("exercise 20");
+
+
+console.log(getCalculationResult("-", 14, 16));
+
+function getCalculationResult(operation, value1, value2){
+    if (operation === "+") {
+        return value1 + value2;
+    }
+    if (operation === "-") {
+        return value1 - value2;
+    }
+    if (operation === "*") {
+        return value1 * value2;
+    }
+    if (operation === "/") {
+        return value1 / value2;
+    }
+    return null;
+}
+
+
+console.warn("exercise 21");
+
+
+console.log(getPercentageValue(200, 13));
+
+function getPercentageValue(baseNumber, percentage) {
+    return baseNumber*(percentage/100);
+}
+
+
+console.warn("exercise 22");
+
+
+
+
+
+console.warn("exercise 23");
