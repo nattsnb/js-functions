@@ -100,9 +100,9 @@ function isTextUppercase (isUppercaseString) {
 console.warn("exercise 9");
 
 
-function isDivisible(n, x, y) {
-    const division1 = n%x;
-    const division2 = n%y;
+function isDivisible(dividend, divisor1, divisor2) {
+    const division1 = dividend%divisor1;
+    const division2 = dividend%divisor2;
     const result = division1 + division2;
     return result === 0;
 }
@@ -153,7 +153,7 @@ console.log(removeChar("anaconda"));
 function removeChar(str){
     let removedLettersString = str.slice(1);
     removedLettersString = removedLettersString.slice(0, -1);
-    return removedLettersString
+    return removedLettersString;
 }
 
 
@@ -173,6 +173,9 @@ function basicOp(operation, value1, value2){
         return value1 * value2;
     }
     if (operation === "/") {
+        if (value2 === 0) {
+            return "error"
+        }
         return value1 / value2;
     }
     return "error";
@@ -213,8 +216,8 @@ console.warn("exercise 16");
 console.log(evenOrOdd(6786));
 
 function evenOrOdd(number) {
-    const isDividedByTwo = number % 2;
-    if (isDividedByTwo === 0){
+    const restFromDivisionByTwo = number % 2;
+    if (restFromDivisionByTwo === 0){
         return "Even";
     }
     return "Odd";
@@ -227,8 +230,7 @@ console.warn("exercise 17");
 console.log(areYouPlayingBanjo("Robert"));
 
 function areYouPlayingBanjo(name) {
-    let firstLetter = name.slice(0,1);
-    firstLetter = firstLetter.toLowerCase();
+    const firstLetter = name.slice(0,1).toLowerCase();
     if (firstLetter === "r"){
         return name + " plays banjo";
     }
@@ -264,32 +266,32 @@ console.log(rockPaperScissors('rock', 'paper')); // 2
 console.log(rockPaperScissors('paper','paper')); // 0
 
 function rockPaperScissors(firstPlayerAnswer, secondPlayerAnswer) {
-    if (firstPlayerAnswer === "rock"){
-        if (secondPlayerAnswer === "scissors"){
-            return 1;
-        }
-        if (secondPlayerAnswer === "paper"){
-            return 2;
-        }
+    if (firstPlayerAnswer === secondPlayerAnswer) {
         return 0;
     }
-    if (firstPlayerAnswer === "scissors"){
-        if (secondPlayerAnswer === "paper"){
+    if (firstPlayerAnswer === "rock") {
+        if (secondPlayerAnswer === "scissors") {
             return 1;
         }
-        if (secondPlayerAnswer === "rock"){
+        if (secondPlayerAnswer === "paper") {
             return 2;
         }
-        return 0;
     }
-    if (firstPlayerAnswer === "paper"){
-        if (secondPlayerAnswer === "rock"){
+    if (firstPlayerAnswer === "scissors") {
+        if (secondPlayerAnswer === "paper") {
             return 1;
         }
-        if (secondPlayerAnswer === "scissors"){
+        if (secondPlayerAnswer === "rock") {
             return 2;
         }
-        return 0;
+    }
+    if (firstPlayerAnswer === "paper") {
+        if (secondPlayerAnswer === "rock") {
+            return 1;
+        }
+        if (secondPlayerAnswer === "scissors") {
+            return 2;
+        }
     }
 }
 
@@ -310,6 +312,9 @@ function getCalculationResult(operation, value1, value2){
         return value1 * value2;
     }
     if (operation === "/") {
+        if (value2 === 0) {
+            return null
+        }
         return value1 / value2;
     }
     return null;
@@ -322,7 +327,7 @@ console.warn("exercise 21");
 console.log(getPercentageValue(200, 13));
 
 function getPercentageValue(baseNumber, percentage) {
-    return baseNumber*(percentage/100);
+    return baseNumber*percentage/100;
 }
 
 
@@ -343,8 +348,8 @@ console.warn("exercise 23");
 
 console.log(isOddNumber(13))
 function isOddNumber(number) {
-    const isDividedByTwo = number % 2;
-    return (isDividedByTwo !== 0);
+    const restFromDivisionByTwo = number % 2;
+    return (restFromDivisionByTwo !== 0);
 }
 
 
@@ -363,6 +368,8 @@ console.warn("exercise 25");
 console.log(isDivisibleBy(14,7));
 
 function isDivisibleBy(dividend, divisor){
+    if (divisor === 0) {
+        return "error"}
     return (dividend % divisor === 0);
 }
 
